@@ -1,3 +1,4 @@
+//line 26 find puncuation with Character.isLetter and add it to a new string
 public void setup()
 {
   String lines[] = loadStrings("palindromes.txt");
@@ -16,7 +17,22 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
+  String noSpace = new String();
+  for (int i = 0; i < word.length(); i++) {
+    if (word.charAt(i) != ' ') {
+      noSpace = noSpace + word.charAt(i);
+    }
+  }
+  for (int i = 0; i < noSpace.length(); i++) {
+    if (space.charAt(i) != ' ') {
+      noSpace = noSpace + word.charAt(i);
+    }
+  }
+  for (int i = 0; i < noSpace.length(); i++) {
+    if (noSpace.charAt(i) != noSpace.charAt(noSpace.length()-(i+1))) {
+      return false;
+    }
+  }
+  return true;
 }
 

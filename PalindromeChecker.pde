@@ -23,13 +23,16 @@ public boolean palindrome(String word)
       noSpace = noSpace + word.charAt(i);
     }
   }
-  for (int i = 0; i < noSpace.length(); i++) {
-    if (space.charAt(i) != ' ') {
-      noSpace = noSpace + word.charAt(i);
+
+  String noNumAndSpace = new String();
+  for (int i = 0; i < noNumAndSpace.length(); i++) {
+    if (Character.isLetter(noSpace.charAt(i))) {
+      noNumAndSpace = noNumAndSpace + noNumAndSpace.charAt(i);
     }
   }
-  for (int i = 0; i < noSpace.length(); i++) {
-    if (noSpace.charAt(i) != noSpace.charAt(noSpace.length()-(i+1))) {
+  
+  for (int i = 0; i < noNumAndSpace.length(); i++) {
+    if (noNumAndSpace.charAt(i) != noNumAndSpace.charAt(noNumAndSpace.length()-(i+1))) {
       return false;
     }
   }

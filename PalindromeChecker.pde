@@ -30,12 +30,13 @@ public boolean palindrome(String word)
       noNumAndSpace = noNumAndSpace + noNumAndSpace.charAt(i);
     }
   }
-  
+
   for (int i = 0; i < noNumAndSpace.length(); i++) {
     if (noNumAndSpace.charAt(i) != noNumAndSpace.charAt(noNumAndSpace.length()-(i+1))) {
       return false;
     }
   }
+  
   return true;
 }
 
